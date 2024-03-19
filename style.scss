@@ -1,0 +1,1671 @@
+@import url(./font.css);
+@import url(./reset.css);
+
+@mixin normal {
+  font-family: "Pretendard-Regular";
+}
+@mixin medium {
+  font-family: "Pretendard-Medium";
+}
+@mixin semibold {
+  font-family: "Pretendard-SemiBold";
+}
+@mixin bold {
+  font-family: "Pretendard-Bold";
+}
+@mixin extrabold {
+  font-family: "Pretendard-ExtraBold";
+}
+
+$slider1-bgColor: #dcf0fd;
+$slider2-bgColor: #eff5ff;
+$slider3-bgColor: #eafaf3;
+$slider4-bgColor: #cbf8e7;
+$slider5-bgColor: linear-gradient(91deg, #0099ff 0%, #ff8a84 90%);
+$slider6-bgColor: #eae8ff;
+
+body {
+  @include normal;
+  word-break: keep-all;
+}
+#wrap {
+  background: #fbfbfb;
+  width: 100%;
+  overflow: hidden;
+}
+
+@mixin slideInnerStyle {
+  max-width: 946px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 122px 0;
+  display: flex;
+  align-items: center;
+}
+
+//---------- <header> ----------//
+header {
+  width: 100%;
+  // height: 85px;
+  height: auto;
+  // background: #fff;
+  background-color: #0099ff;
+  top: 0;
+  position: absolute;
+  z-index: 1000;
+  &.active {
+    background-color: #fff;
+    position: fixed;
+    .gnb {
+      a {
+        &:hover {
+          color: #18cd8c;
+        }
+      }
+    }
+  }
+  nav {
+    height: 100%;
+    height: 85px;
+    display: flex;
+    .logo {
+      display: block;
+      height: 100%;
+      margin: 0 42px 0 32px;
+      display: flex;
+      align-items: center;
+    }
+    .gnb {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      align-items: center;
+      height: 100%;
+      li {
+        a {
+          font-size: 16px;
+          @include bold;
+          color: #111;
+          &:hover {
+            color: #fafafa;
+          }
+        }
+      }
+    }
+  }
+
+  .gnbDetailBox {
+    width: 100%;
+    height: auto;
+    z-index: 100;
+    .lnbWrap {
+      padding: 32px;
+      height: auto;
+      // display: flex;
+      display: none;
+      background: #fff;
+    }
+    .dt1 {
+      // display: flex;
+      // height: 614px;
+      .leftItem {
+        width: 250px;
+        .dtImg {
+          margin: 16px 0;
+        }
+        .cashBackEventBtn {
+          width: 218px;
+          height: 50px;
+          border: none;
+          border-radius: 8px;
+          background: #18cd8c;
+          font-size: 15px;
+          color: #fff;
+        }
+      }
+      .rightItem {
+        display: flex;
+        gap: 40px;
+        section {
+          width: 210px;
+          .rightItemCategory1 {
+            height: 550px;
+            display: flex;
+            flex-direction: column;
+            li:not(:first-child) {
+              &:hover {
+                @include bold;
+              }
+            }
+            .rightItemImg {
+              width: 210px;
+              height: 110px;
+              .svgWrap {
+                padding: 20px 0 20px 20px;
+                width: auto;
+                height: auto;
+                display: flex;
+                gap: 10px;
+                background-color: #f7f7f7;
+                border-radius: 8px;
+                .svgWrapText {
+                  display: flex;
+                  flex-direction: column;
+                  span {
+                    @include semibold;
+                    &:first-child {
+                      font-size: 14px;
+                      margin-bottom: 10px;
+                    }
+                  }
+                }
+                .cardImage {
+                  width: 70px;
+                }
+              }
+            }
+            ul {
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-around;
+            }
+          }
+          .rightItemCategory2,
+          .rightItemCategory3 {
+            padding-top: 20px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            li:not(:first-child) {
+              &:hover {
+                @include bold;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .dt2 {
+      // display: flex;
+      // display: none;
+      .leftItem {
+        width: 219px;
+        margin-right: 40px;
+        .dt2ImgWrap {
+          .dt2Img {
+            display: block;
+            background: #fff;
+            margin: 40px auto;
+            padding: 0 5px;
+            width: 170px;
+            border-radius: 8px;
+            box-shadow: rgba(0, 0, 0, 0.2);
+            img {
+              width: 160px;
+              margin: 0 auto;
+            }
+          }
+        }
+        .loanCheck {
+          @include semibold;
+          width: 100%;
+          height: 50px;
+          background: #18cd8c;
+          color: #fff;
+          border: none;
+          border-radius: 8px;
+          font-size: 15px;
+        }
+      }
+      .rightItem {
+        display: flex;
+        gap: 40px;
+        section {
+          width: 210px;
+          .imgBox {
+            background: #f7f7f7;
+            border-radius: 8px;
+            width: 210px;
+            height: 110px;
+            padding: 20px;
+            display: flex;
+            gap: 15px;
+            div {
+              &:first-child {
+                span {
+                  @include semibold;
+                  font-size: 16px;
+                  line-height: 1.3;
+                  &:first-child {
+                    font-size: 13px;
+                    display: block;
+                    height: auto;
+                    margin-bottom: -10px;
+                  }
+                }
+              }
+            }
+            .coupon {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+          ul {
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+            li:not(:first-child) {
+              &:hover {
+                @include bold;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.leftItemTitle {
+  @include semibold;
+  font-size: 20px;
+  line-height: 1.3;
+  display: block;
+}
+.greenText {
+  color: #18cd8c;
+}
+.lnbSubTitle {
+  color: #888e99;
+}
+
+header.mobileHeader {
+  display: none;
+}
+//--------- <slider> ----------//
+.slider {
+  width: 100%;
+  height: 480px;
+  position: relative;
+  margin-top: 85px;
+  .slideWrap {
+    width: 600%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -600vw;
+    display: flex;
+    transition: all 0.3s linear;
+    .slide {
+      min-width: 100vw;
+      height: 100%;
+      overflow: hidden;
+      &.hidden {
+        display: none;
+      }
+      em {
+        @include bold;
+        font-style: normal;
+      }
+      h2 {
+        font-size: 52px;
+        margin-bottom: 12px;
+      }
+      h3 {
+        @include medium;
+        font-size: 24px;
+        margin-bottom: 25px;
+        color: #111;
+      }
+    }
+
+    .s1 {
+      background: $slider1-bgColor;
+      .slideInner {
+        @include slideInnerStyle;
+        .slideInnerText {
+          .slide1BtnBox {
+            display: flex;
+            gap: 14px;
+            a {
+              display: flex;
+              align-items: center;
+              gap: 6px;
+              border-radius: 8px;
+              color: #fff;
+              padding: 12px 20px;
+              background: #4a88e5;
+            }
+          }
+        }
+        .slideImg1 {
+          width: 650px;
+          height: 480px;
+          margin-top: 70px;
+          margin-right: -180px;
+        }
+      }
+    }
+
+    .s2 {
+      background: $slider2-bgColor;
+      .slideInner {
+        @include slideInnerStyle;
+        .slideInnerText {
+          a {
+            width: 200px;
+            padding: 12px 19px;
+            border-radius: 8px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include bold;
+            color: #09a56f;
+          }
+        }
+        .slideImg2 {
+          width: 434px;
+          height: 278px;
+          margin-top: 55px;
+        }
+      }
+    }
+
+    .s3 {
+      background-color: $slider3-bgColor;
+      .slideInner {
+        @include slideInnerStyle;
+        position: relative;
+        z-index: 1;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 250px;
+          width: 100%;
+          height: 100%;
+          background: url(./img/banksalad_slider3.png) no-repeat center;
+        }
+        .slideInnerText {
+          display: flex;
+          z-index: 2;
+          flex-direction: column;
+          h2 {
+            color: #0b0c0c;
+            @include bold;
+          }
+          .slide3BtnBox {
+            a {
+              @include medium;
+              display: block;
+              padding: 10px 20px;
+              border-radius: 41px;
+              font-size: 18px;
+              text-align: center;
+              &:nth-child(1) {
+                width: 200px;
+                background: #13bd7e;
+                color: #fff;
+                margin-bottom: 10px;
+              }
+              &:nth-child(2) {
+                width: 178px;
+                border: 1px solid #13bd7e;
+                color: #13bd7e;
+                background: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .s4 {
+      background: $slider4-bgColor;
+      .slideInner {
+        @include slideInnerStyle;
+        position: relative;
+        .slideInnerText {
+          position: absolute;
+          z-index: 1;
+          h3 {
+            font-size: 22px;
+          }
+          .slide4BtnBox {
+            a {
+              color: #fff;
+              background: #877af5;
+              padding: 10px 20px;
+              border-radius: 41px;
+            }
+          }
+        }
+        .slideImg4 {
+          position: absolute;
+          right: -160px;
+          width: 740px;
+          height: 444px;
+        }
+      }
+    }
+
+    .s5 {
+      background: $slider5-bgColor;
+      .slideInner {
+        @include slideInnerStyle;
+        position: relative;
+        .slideInnerText {
+          .slide5Text {
+            @include bold;
+            color: #fafafa;
+            font-size: 48px;
+            margin-bottom: 8px;
+          }
+          h3 {
+            font-family: "-apple-system";
+            font-weight: 350;
+            font-size: 22px;
+            color: #ededee;
+          }
+          .slide5BtnBox {
+            a {
+              @include medium;
+              background: #ffbe4c;
+              color: #111;
+              padding: 10px 20px;
+              border-radius: 41px;
+              font-size: 18px;
+            }
+          }
+        }
+        .slideImg5 {
+          position: absolute;
+          right: -60px;
+          width: 538px;
+          height: 480px;
+        }
+      }
+    }
+
+    .s6 {
+      background: $slider6-bgColor;
+      overflow: hidden;
+      .slideInner {
+        @include slideInnerStyle;
+        position: relative;
+        .slide6BtnBox {
+          width: max-content;
+          display: flex;
+          gap: 14px;
+          a {
+            padding: 8px 20px;
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            border-radius: 8px;
+            background: #6356da;
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          }
+        }
+        .slideImg6 {
+          position: absolute;
+          right: -330px;
+          width: 650px;
+          height: 480px;
+        }
+      }
+    }
+  }
+
+  .pager {
+    position: absolute;
+    z-index: 100;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    li {
+      width: 8px;
+      height: 8px;
+      border-radius: 4px;
+      background: #fff;
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
+      transition: all 0.2s linear;
+      &:hover {
+        cursor: pointer;
+        background: #0099ff;
+      }
+    }
+  }
+}
+
+//---------- <section1> ----------//
+.section1 {
+  width: 100%;
+  background: #fff;
+  padding: 48px 0;
+  margin-bottom: 12px;
+  position: relative;
+  .sectionInner1 {
+    width: 100%;
+    max-width: 946px;
+    margin: 0 auto;
+    padding: 0 32px;
+    .featureTitle {
+      width: 100%;
+      font-size: 18px;
+      color: #7b7b7b;
+      line-height: 1.2;
+      text-align: center;
+      strong {
+        display: block;
+        @include medium;
+        font-size: 28px;
+        color: #0b0c0c;
+        letter-spacing: -2px;
+        margin-top: 12px;
+      }
+    }
+    .featuresBox {
+      margin-top: 42px;
+      max-width: 946px;
+      display: flex;
+      .features {
+        width: 33.33%;
+        padding: 0 16px;
+        &:nth-of-type(1) .featuresImg {
+          background: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox=%270 0 113 104%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath fill-rule=%27evenodd%27 clip-rule=%27evenodd%27 d=%27M65.3302 33.8014L70.4156 27.7627H70.4172C70.7149 27.4094 71.0857 27.1254 71.5037 26.9307C71.9218 26.736 72.3771 26.6352 72.8379 26.6353H95.1452C95.986 26.6353 96.7924 26.9708 97.387 27.5681C97.9816 28.1654 98.3156 28.9755 98.3156 29.8202V33.8014H98.3163V100.686C98.3163 101.53 97.9822 102.34 97.3877 102.938C96.7931 103.535 95.9867 103.871 95.1458 103.871H3.20268C2.36182 103.871 1.55541 103.535 0.960831 102.938C0.366256 102.34 0.0322266 101.53 0.0322266 100.686V36.9864C0.0322266 36.1417 0.366256 35.3315 0.960831 34.7342C1.55541 34.137 2.36182 33.8014 3.20268 33.8014H65.3302Z%27 fill=%27%23EEEEEF%27/%3E%3Cpath d=%27M0.0322266 44.4984C0.0322266 43.7486 0.366256 43.0294 0.960831 42.4992C1.55541 41.969 2.36182 41.6711 3.20268 41.6711H93.8881C96.3337 41.6711 98.3163 43.6537 98.3163 46.0993V101.043C98.3163 101.793 97.9822 102.512 97.3877 103.042C96.7931 103.573 95.9867 103.87 95.1458 103.87H3.20268C2.36182 103.87 1.55541 103.573 0.960831 103.042C0.366256 102.512 0.0322266 101.793 0.0322266 101.043V44.4984Z%27 fill=%27url%28%23paint0_linear%29%27/%3E%3Cpath d=%27M92.0974 99.5236L84.2422 71.1095L112.39 85.6065L103.226 88.5059L109.772 96.6242L104.535 100.103L97.9888 91.9852L92.0974 99.5236Z%27 fill=%27%23333A44%27/%3E%3Cpath fill-rule=%27evenodd%27 clip-rule=%27evenodd%27 d=%27M54.3108 74.5461L49.325 71.2217L44.3332 67.8974C44.0736 67.7252 43.7296 67.8915 43.7054 68.2001L43.2708 74.1127L42.8362 80.0253C42.8121 80.328 43.138 80.5417 43.4157 80.4111L48.8361 77.8288L54.2565 75.2465C54.5402 75.0981 54.5643 74.7182 54.3108 74.5461Z%27 fill=%27white%27/%3E%3Cpath fill-rule=%27evenodd%27 clip-rule=%27evenodd%27 d=%27M69.8233 72.4918H62.7611C62.5438 72.4918 62.3627 72.658 62.3567 72.8717C62.1515 79.8468 56.3146 85.4567 49.1739 85.4567C42.0332 85.4567 36.1964 79.8468 35.9911 72.8717C35.9851 72.658 35.804 72.4918 35.5867 72.4918H28.5305C28.3072 72.4918 28.1201 72.6698 28.1261 72.8954C28.3434 84.1269 37.7054 93.1976 49.1739 93.1976C60.6485 93.1976 70.0044 84.1269 70.2217 72.8954C70.2278 72.6698 70.0467 72.4918 69.8233 72.4918Z%27 fill=%27white%27/%3E%3Cpath fill-rule=%27evenodd%27 clip-rule=%27evenodd%27 d=%27M47.4658 58.1023C47.4658 61.2841 44.8462 63.8605 41.6109 63.8605C38.3755 63.8605 35.7559 61.2841 35.7559 58.1023C35.7559 54.9204 38.3755 52.3441 41.6109 52.3441C44.8462 52.3441 47.4658 54.9204 47.4658 58.1023Z%27 fill=%27white%27/%3E%3Cpath fill-rule=%27evenodd%27 clip-rule=%27evenodd%27 d=%27M63.6306 63.9968L57.0633 56.4874C56.9185 56.3212 56.665 56.3034 56.4959 56.4458L48.8543 62.9045C48.6853 63.047 48.6672 63.2963 48.812 63.4626L55.3793 70.972C55.5241 71.1382 55.7777 71.156 55.9467 71.0135L63.5883 64.5548C63.7573 64.4124 63.7755 64.163 63.6306 63.9968Z%27 fill=%27white%27/%3E%3Cpath d=%27M35.4432 2.94338C35.4432 7.38461 35.9847 10.3601 35.9848 13.8312%27 stroke=%27%23AAF2D3%27 stroke-opacity=%270.8%27 stroke-width=%275.11938%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3Cpath d=%27M62.632 4.758C61.9539 8.20509 61.7379 11.0169 60.8438 15.4876%27 stroke=%27%23AAF2D3%27 stroke-opacity=%270.8%27 stroke-width=%275.11938%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3Cpath d=%27M7.21533 13.5483C9.46091 15.917 11.686 17.7396 14.0663 20.4454%27 stroke=%27%23AAF2D3%27 stroke-opacity=%270.8%27 stroke-width=%275.11938%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3Cpath d=%27M93.3752 13.8312C91.1253 16.364 88.7477 18.9264 86.2222 20.9842%27 stroke=%27%23AAF2D3%27 stroke-opacity=%270.8%27 stroke-width=%275.11938%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3Cdefs%3E%3ClinearGradient id=%27paint0_linear%27 x1=%2737.5019%27 y1=%2741.6711%27 x2=%2767.9197%27 y2=%27115.953%27 gradientUnits=%27userSpaceOnUse%27%3E%3Cstop stop-color=%27%233BDFA4%27/%3E%3Cstop offset=%271%27 stop-color=%27%230FC9BA%27/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E")
+            center no-repeat;
+        }
+        &:nth-of-type(2) .featuresImg {
+          background: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox=%270 0 160 111%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cg clip-path=%27url%28%23clip0%29%27%3E%3Cpath d=%27M66.4455 26.1309C65.5335 26.382 63.7094 27.1039 61.225 35.1076C58.8034 42.9544 63.3635 41.2281 65.8794 39.2507C66.9173 38.4347 67.389 35.4215 68.5212 33.4441C70.1565 30.5879 71.9806 28.2338 71.9806 28.2338C71.9806 28.2338 68.0494 36.4887 71.8862 37.4303C75.094 38.215 75.1569 33.0361 77.2326 30.2426C78.3018 28.7988 79.8428 27.8258 80.8492 27.9513C83.774 28.3594 66.4455 26.1309 66.4455 26.1309Z%27 fill=%27%23F4A2C7%27/%3E%3Cpath d=%27M85.6605 57.4241C85.1574 58.5854 84.4655 59.6526 83.5849 60.657C83.3648 60.9081 83.1446 61.1592 82.893 61.4103C82.3584 61.9753 81.7609 62.4775 81.1633 62.9797C80.8803 63.1994 80.5658 63.4505 80.2827 63.6702C75.0622 67.468 67.6402 69.7593 62.6712 70.9834C62.3253 71.0776 62.0108 71.1404 61.6963 71.2031C59.0546 71.8309 57.2934 72.082 57.2934 72.082C57.2934 72.082 54.7146 68.4097 52.1672 63.2935C52.0099 63.0111 51.8841 62.6972 51.7269 62.4147C51.2237 61.3789 50.752 60.3118 50.2802 59.1818C50.0601 58.6168 49.8399 58.0833 49.6198 57.5183C47.5442 52.0255 46.3491 46.0305 48.2989 41.448C48.4247 41.1341 48.582 40.8516 48.7392 40.5378C48.8965 40.2239 49.0852 39.91 49.2739 39.6275C52.1357 35.2647 57.6708 33.4129 62.4825 35.4844C62.9857 35.7041 63.4889 35.9552 63.9292 36.2691C64.2437 36.4574 64.5267 36.6771 64.8098 36.8969C67.2942 38.8429 68.7409 41.856 68.8352 45.0575C71.8858 42.2955 76.2572 41.3538 80.1569 43.0174C81.6351 43.6451 82.893 44.5867 83.868 45.7167C84.0881 45.9678 84.3082 46.2503 84.5284 46.5327C86.6984 49.6087 87.2645 53.689 85.6605 57.4241Z%27 fill=%27%23ED6E86%27/%3E%3Cpath d=%27M131.733 11.5672L107.077 0.77002C104.121 6.35695 99.6867 11.4103 99.152 11.63C90.2205 14.1724 77.232 16.5892 66.9481 20.0104C58.2052 22.9294 57.4505 23.3061 54.9974 26.1309C50.4373 31.404 48.1729 35.0135 47.2924 37.399C45.8772 41.2596 48.5503 45.1516 52.8589 41.4479C57.1674 37.7442 61.9162 29.7091 65.7216 29.4894C73.9298 29.0186 88.365 33.4756 88.365 33.4756L101.385 40.5063C110.631 37.8698 114.09 32.377 120.537 24.6871C125.569 19.5082 131.733 11.5672 131.733 11.5672Z%27 fill=%27%23FFC7DD%27/%3E%3Cpath d=%27M74.6855 93.7393C81.112 93.7393 86.3217 88.5399 86.3217 82.126C86.3217 75.7122 81.112 70.5128 74.6855 70.5128C68.259 70.5128 63.0493 75.7122 63.0493 82.126C63.0493 88.5399 68.259 93.7393 74.6855 93.7393Z%27 fill=%27%235ADCE2%27/%3E%3Cpath d=%27M92.706 87.1791L92.8318 87.3988C95.0018 91.1653 99.499 92.8916 103.65 91.5734C108.399 90.0668 112.991 88.0266 117.331 85.547C121.105 83.3813 122.834 78.8929 121.513 74.7498L121.451 74.5301C119.941 69.822 117.928 65.3022 115.475 61.0335L115.349 60.8138C113.179 57.0474 108.682 55.3211 104.531 56.6393C99.7821 58.1459 95.1905 60.1861 90.8505 62.6657C87.0766 64.8314 85.3469 69.3198 86.6678 73.4629L86.7307 73.6826C88.2402 78.3907 90.253 82.9105 92.706 87.1791Z%27 fill=%27%233686DF%27/%3E%3Cpath d=%27M53.8663 89.0311L53.1429 88.9998L52.3252 88.9684L41.8841 88.7173L41.1293 88.6859L40.2173 88.6545L36.1289 88.5917L35.2169 88.5603L29.9334 88.4348C26.5055 88.372 24.4613 84.6055 26.2539 81.6865L26.6313 81.0902L27.0401 80.3996L30.4052 74.8755L30.814 74.185L32.4808 71.4857L37.041 64.0155L37.4498 63.325L38.7078 61.2848C40.5004 58.3658 44.7775 58.46 46.4443 61.4731L52.168 71.9565L53.8663 75.0638L54.3065 75.8799L55.9734 78.9558L56.4765 79.8661L57.8918 82.4712C59.5271 85.453 57.2942 89.1253 53.8663 89.0311Z%27 fill=%27%23DCE2E1%27/%3E%3Cpath d=%27M85.6605 57.4241C85.1574 58.5854 84.4655 59.6526 83.5849 60.657C83.3648 60.9081 83.1446 61.1592 82.893 61.4103C82.3584 61.9753 81.7609 62.4775 81.1633 62.9797C80.8803 63.1994 80.5658 63.4505 80.2827 63.6702C75.0622 67.468 67.6402 69.7593 62.6712 70.9834C62.3253 71.0776 62.0108 71.1404 61.6963 71.2031C59.0546 71.8309 57.2934 72.082 57.2934 72.082C57.2934 72.082 54.7146 68.4097 52.1672 63.2935C52.0099 63.0111 51.8841 62.6972 51.7269 62.4147C51.2237 61.3789 50.752 60.3118 50.2802 59.1818C50.0601 58.6168 49.8399 58.0833 49.6198 57.5183C47.5442 52.0255 46.3491 46.0305 48.2989 41.448C48.4247 41.1341 48.582 40.8516 48.7392 40.5378C48.8965 40.2239 49.0852 39.91 49.2739 39.6275C52.1357 35.2647 57.6708 33.4129 62.4825 35.4844C62.9857 35.7041 63.4889 35.9552 63.9292 36.2691C64.2437 36.4574 64.5267 36.6771 64.8098 36.8969C67.2942 38.8429 68.7409 41.856 68.8352 45.0575C71.8858 42.2955 76.2572 41.3538 80.1569 43.0174C81.6351 43.6451 82.893 44.5867 83.868 45.7167C84.0881 45.9678 84.3082 46.2503 84.5284 46.5327C86.6984 49.6087 87.2645 53.689 85.6605 57.4241Z%27 fill=%27%2318CD8C%27/%3E%3Cpath d=%27M85.6605 57.4241C85.1574 58.5854 84.4655 59.6526 83.5849 60.657C83.3648 60.9081 83.1446 61.1592 82.893 61.4103C82.3584 61.9753 81.7609 62.4775 81.1633 62.9797C80.8803 63.1994 80.5658 63.4505 80.2827 63.6702C75.0622 67.468 67.6402 69.7593 62.6712 70.9834C62.3253 71.0776 62.0108 71.1404 61.6963 71.2031C59.0546 71.8309 57.2934 72.082 57.2934 72.082C57.2934 72.082 54.7146 68.4097 52.1672 63.2935C52.0099 63.0111 51.8841 62.6972 51.7269 62.4147C51.2237 61.3789 50.752 60.3118 50.2802 59.1818C50.0601 58.6168 49.8399 58.0833 49.6198 57.5183C47.5442 52.0255 46.3491 46.0305 48.2989 41.448C48.4247 41.1341 48.582 40.8516 48.7392 40.5378C48.8965 40.2239 49.0852 39.91 49.2739 39.6275C52.1357 35.2647 57.6708 33.4129 62.4825 35.4844C62.9857 35.7041 63.4889 35.9552 63.9292 36.2691C64.2437 36.4574 64.5267 36.6771 64.8098 36.8969C67.2942 38.8429 68.7409 41.856 68.8352 45.0575C71.8858 42.2955 76.2572 41.3538 80.1569 43.0174C81.6351 43.6451 82.893 44.5867 83.868 45.7167C84.0881 45.9678 84.3082 46.2503 84.5284 46.5327C86.6984 49.6087 87.2645 53.689 85.6605 57.4241Z%27 fill=%27url%28%23paint0_linear%29%27/%3E%3Cpath d=%27M70.0517 61.5898L71.7803 57.5484L57.7811 51.5842L56.0526 55.6256L70.0517 61.5898Z%27 fill=%27white%27/%3E%3Cpath d=%27M68.937 50.4837L64.8877 48.7585L58.9118 62.7301L62.9611 64.4553L68.937 50.4837Z%27 fill=%27white%27/%3E%3Cpath d=%27M103.242 0.48761L101.952 2.81027C101.669 3.34385 101.858 4.00298 102.393 4.25408L132.238 18.755C132.741 19.0061 133.307 18.8178 133.59 18.347L144 0.48761%27 fill=%27%23DCE2E1%27/%3E%3Cpath d=%27M16 74.0909L17.2265 87.9327C17.8555 95.0576 23.8308 100.488 31.0013 100.488H116.857C124.059 100.488 130.066 94.9635 130.632 87.8072L131.733 74.0909%27 stroke=%27%23DCE2E1%27 stroke-width=%273.77724%27 stroke-miterlimit=%2710%27 stroke-linecap=%27round%27/%3E%3Cpath d=%27M77.1697 49.2006C77.1697 49.2006 75.8488 50.5189 74.7481 48.416C73.6474 46.313 75.3456 42.2955 75.3456 42.2955C75.3456 42.2955 77.1068 42.1699 78.3333 42.5152%27 fill=%27%23009E61%27/%3E%3Cpath d=%27M88.3649 33.4442C88.3649 33.4442 84.0564 37.6187 77.9867 42.7976C72.6403 47.3487 75.9739 55.1955 83.1758 50.4247C91.384 44.9633 91.9187 43.8961 101.385 40.4435%27 fill=%27%23FFC7DD%27/%3E%3Cpath d=%27M42.0085 71.3601C42.0085 71.8937 41.9456 72.2703 41.757 72.6156C41.411 73.3061 40.6562 73.6827 39.7442 73.5258C39.4612 73.4944 39.1467 73.4317 38.8007 73.3061C39.0209 73.5572 39.241 73.8083 39.4612 74.0594C39.8386 74.4674 40.499 75.2521 40.3417 76.1623C40.1216 77.1981 38.9894 77.6062 37.9831 77.6689C37.8573 77.6689 37.7315 77.6689 37.6057 77.6689C35.5615 77.6689 33.36 76.8842 30.9384 75.2521C30.7497 75.1266 30.5611 75.001 30.4038 74.8755L30.8126 74.1849C31.0013 74.3105 31.19 74.436 31.3787 74.5616C33.8318 76.1937 35.9703 76.947 37.9516 76.8529C38.612 76.8215 39.4297 76.5704 39.5555 76.0054C39.6499 75.566 39.2725 75.0638 38.8951 74.593C38.5177 74.1536 38.1089 73.6827 37.7 73.2433L36.8509 72.2703L36.8194 72.2389C36.6622 72.1134 36.5364 71.9565 36.5049 71.7681C36.4735 71.6112 36.5678 71.4543 36.6936 71.3915C36.8194 71.2973 37.0081 71.3287 37.1339 71.3915C37.2912 71.517 37.4799 71.6426 37.6371 71.7681C38.0774 72.082 38.4862 72.3959 38.958 72.5528C39.3039 72.647 39.6184 72.7411 39.9329 72.7725C40.3417 72.8353 40.8764 72.7411 41.0965 72.2703C41.2223 72.0506 41.2538 71.7681 41.2538 71.3601C41.2538 70.4185 41.128 69.6338 40.8764 68.8805C40.6248 68.0958 40.2474 67.3739 39.7757 66.6834C39.0209 65.6476 38.0774 64.7688 37.1025 64.0155L37.5113 63.325C38.5806 64.1096 39.6184 65.0512 40.4046 66.2126C40.9393 66.9659 41.3481 67.7506 41.6312 68.6294C41.8827 69.4455 42.0085 70.3243 42.0085 71.3601Z%27 fill=%27%23CCD6D4%27/%3E%3Cpath d=%27M41.1606 88.7172C40.6575 87.65 39.997 86.7712 39.2108 86.0806C38.9278 85.8296 38.6133 85.6098 38.2988 85.3901C38.0786 85.2332 37.827 85.1076 37.6069 84.9821C37.544 84.9507 37.4496 84.9193 37.3867 84.8565C37.1037 84.731 36.8207 84.6054 36.5376 84.4799C35.8143 84.166 35.0281 83.9149 34.3047 83.6952C33.9273 83.5697 33.5814 83.4441 33.204 83.3186C31.034 82.5653 28.9898 81.5923 27.0714 80.3682L26.6626 81.0587C28.6124 82.2828 30.7195 83.2872 32.9524 84.0719C33.3298 84.1974 33.6758 84.323 34.0531 84.4485C34.6192 84.6368 35.2168 84.8252 35.7828 85.0449C36.0659 85.1704 36.3804 85.2646 36.6634 85.3901C36.8207 85.4529 36.9779 85.5471 37.1666 85.6098C37.4182 85.7354 37.6383 85.8609 37.8585 86.0179C38.173 86.2062 38.456 86.4259 38.7391 86.677C39.3995 87.242 39.9027 87.9639 40.3115 88.7172H41.1606Z%27 fill=%27%23CCD6D4%27/%3E%3Cpath d=%27M56.4447 79.8346C55.1553 79.5522 53.8973 79.4266 52.7022 79.3952C52.4192 79.3952 52.1362 79.3952 51.8531 79.3952C49.5259 79.458 47.3873 79.9916 45.4689 80.996C44.5255 81.4668 43.6449 82.0004 42.7643 82.5026C42.4813 82.6595 42.2297 82.8164 41.9781 82.9734C41.8523 83.0675 41.7265 83.1303 41.6007 83.2245C41.2547 83.4442 40.9088 83.6325 40.5629 83.8208C39.7137 84.2916 38.9275 84.6997 38.2671 85.4216C38.2671 85.4216 38.2671 85.4216 38.2356 85.453C38.1413 85.5785 37.9526 85.7982 37.7639 86.0807C37.2607 86.8026 36.5374 87.9326 36.0971 88.6545L35.1851 88.6231C35.6568 87.807 36.443 86.5201 37.0406 85.6727C37.2293 85.3902 37.3865 85.1705 37.5437 85.0135C37.5752 84.9821 37.6066 84.9194 37.6381 84.888C38.3929 84.0719 39.2734 83.6011 40.154 83.1303C40.4685 82.942 40.8145 82.785 41.1289 82.5653C41.1289 82.5653 41.1604 82.5653 41.1604 82.5339C41.412 82.377 41.6636 82.2201 41.9466 82.0631C42.953 81.4668 43.9908 80.839 45.0915 80.3055C47.2301 79.2069 49.5573 78.6733 52.1047 78.6105C52.3877 78.6105 52.6708 78.6105 52.9538 78.6105C53.9288 78.6419 54.9351 78.7361 55.9415 78.9244L56.4447 79.8346Z%27 fill=%27%23CCD6D4%27/%3E%3Cpath d=%27M52.4826 86.3632C52.6713 87.2734 52.8915 88.1522 53.1745 88.9997L53.1431 89.0311L52.3254 88.9997C51.9795 87.9639 51.7593 86.9909 51.6021 86.0493C51.5392 85.7668 51.5077 85.4529 51.4763 85.1704C51.2247 82.8792 51.4763 80.9332 51.8537 79.4266V79.3952C51.9166 79.1127 52.0109 78.8302 52.1053 78.5791C52.6084 76.9784 53.3003 75.7856 53.8349 75.0323L54.2752 75.8484C53.8664 76.5076 53.3632 77.4492 52.9544 78.6105C52.86 78.8616 52.7971 79.1127 52.7028 79.3952C52.6713 79.4893 52.6399 79.5835 52.6399 79.6777C52.1367 81.6551 52.0738 83.6011 52.3254 85.4529C52.3883 85.7668 52.4197 86.0493 52.4826 86.3632Z%27 fill=%27%23CCD6D4%27/%3E%3Cpath d=%27M105.285 5.66669L108.053 7.01634L127.708 16.5581L124.972 19.7596L105.285 5.66669Z%27 fill=%27%23F4A2C7%27/%3E%3C/g%3E%3Cdefs%3E%3ClinearGradient id=%27paint0_linear%27 x1=%2757.0857%27 y1=%2753.5963%27 x2=%27108.806%27 y2=%2739.8849%27 gradientUnits=%27userSpaceOnUse%27%3E%3Cstop stop-color=%27%2318CD8C%27 stop-opacity=%270%27/%3E%3Cstop offset=%270.2234%27 stop-color=%27%2314BC7D%27 stop-opacity=%270.2234%27/%3E%3Cstop offset=%270.6652%27 stop-color=%27%23098F55%27 stop-opacity=%270.6655%27/%3E%3Cstop offset=%270.9996%27 stop-color=%27%23006934%27/%3E%3C/linearGradient%3E%3CclipPath id=%27clip0%27%3E%3Crect width=%27160%27 height=%27110%27 fill=%27white%27 transform=%27translate%280 0.48761%29%27/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E")
+            center no-repeat;
+        }
+        &:nth-of-type(3) .featuresImg {
+          background: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox=%270 0 164 126%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Ccircle opacity=%270.15%27 cx=%2785.2549%27 cy=%2762.8605%27 r=%2762.7925%27 fill=%27%230FC9BA%27/%3E%3Cmask id=%27mask0%27 style=%27mask-type:alpha%27 maskUnits=%27userSpaceOnUse%27 x=%2722%27 y=%270%27 width=%27126%27 height=%27126%27%3E%3Ccircle cx=%2784.9556%27 cy=%2762.8605%27 r=%2762.7925%27 fill=%27%2357D9CF%27/%3E%3C/mask%3E%3Cg mask=%27url%28%23mask0%29%27%3E%3Cpath d=%27M48.9183 35.3546L117.516 33.3815C121.426 33.0419 124.146 36.4425 123.806 39.5027L126.262 121.875C126.602 125.786 123.201 128.506 120.141 128.165L51.5432 130.138C47.6328 130.478 44.913 127.077 45.2533 124.017L42.712 42.4096C42.3724 38.4992 45.773 35.7793 48.9183 35.3546Z%27 fill=%27%23D0D0D0%27/%3E%3Cpath d=%27M51.4769 44.4571C50.9463 44.4708 50.5267 44.9111 50.5386 45.4418L52.6793 141.169C52.6913 141.703 53.1353 142.125 53.6692 142.11L117.704 140.344C118.23 140.329 118.648 139.894 118.64 139.367L117.306 43.7285C117.298 43.192 116.854 42.7649 116.317 42.7788L51.4769 44.4571Z%27 fill=%27white%27/%3E%3Cpath d=%27M95.1554 32.7249C94.9016 32.7162 94.6994 32.5119 94.6796 32.2588C94.2658 26.9862 89.5184 22.0854 83.4844 22.1674C77.434 22.2496 73.0802 26.9381 72.9443 32.9241C72.9385 33.1825 72.7385 33.3983 72.4805 33.4123L64.0664 33.8704C63.8031 33.8847 63.6003 34.1081 63.6113 34.3716L63.9956 43.541C64.0065 43.8028 64.2248 44.0079 64.4868 44.0025L104.667 43.1767C104.937 43.1712 105.15 42.9447 105.138 42.6749L104.754 33.4968C104.743 33.2451 104.541 33.044 104.289 33.0355L95.1554 32.7249Z%27 fill=%27%235B5E61%27/%3E%3Cpath d=%27M87.7295 32.7068C87.4743 35.002 85.774 36.3619 84.1588 36.9568C81.8636 36.7015 80.5036 35.0012 79.9938 32.6209C80.2491 30.3258 81.9494 28.9658 83.5646 28.3709C85.8598 28.6262 87.9848 30.4116 87.7295 32.7068Z%27 fill=%27black%27/%3E%3Cpath d=%27M81.6825 73.2031L84.8165 73.1326L79.5984 59.1546L76.1325 59.2326L71.5581 73.4309L74.5847 73.3628L75.5817 69.9215L80.5317 69.8102L81.6825 73.2031ZM77.8431 61.8901L77.9114 61.8886L79.8474 67.618L76.1667 67.7008L77.8431 61.8901ZM85.2915 59.0266L85.6084 73.1148L90.9879 72.9938C95.2153 72.8987 97.6459 70.2164 97.5453 65.7449C97.4447 61.2734 94.8984 58.8105 90.671 58.9056L85.2915 59.0266ZM88.2947 61.3913L90.3742 61.3445C92.9712 61.2861 94.4721 62.8738 94.5385 65.8223C94.607 68.8684 93.2176 70.5016 90.5815 70.5609L88.502 70.6077L88.2947 61.3913ZM67.0343 92.5374L66.9096 86.992L72.6406 86.863L72.5881 84.5296L66.8571 84.6586L66.7721 80.8802L73.0498 80.739L72.9951 78.308L63.7689 78.5155L64.0859 92.6038L67.0343 92.5374ZM77.09 80.5211L79.5992 80.4647C81.0636 80.4317 82.0011 81.2898 82.0319 82.6566C82.0633 84.0528 81.2135 84.9217 79.7295 84.9551L77.1911 85.0122L77.09 80.5211ZM77.2392 87.1503L79.6018 87.0972L82.3441 92.193L85.6831 92.1179L82.5893 86.5904C84.1957 85.9193 85.0978 84.3362 85.0572 82.53C84.9946 79.7475 83.1011 78.0806 79.8598 78.1536L74.0897 78.2834L74.4066 92.3716L77.3551 92.3053L77.2392 87.1503ZM95.8416 89.4474L89.4565 89.591L89.3765 86.0372L95.4004 85.9017L95.3494 83.6367L89.3256 83.7722L89.2492 80.3746L95.6343 80.231L95.5796 77.7999L86.246 78.0099L86.5629 92.0981L95.8965 91.8882L95.8416 89.4474ZM106.651 89.2042L100.265 89.3479L100.185 85.7941L106.209 85.6586L106.158 83.3935L100.135 83.529L100.058 80.1315L106.443 79.9878L106.389 77.5568L97.0549 77.7668L97.3719 91.855L106.705 91.645L106.651 89.2042Z%27 fill=%27%230FC9BA%27/%3E%3C/g%3E%3Cpath d=%27M140.597 48.1203C140.874 47.2097 142.163 47.2097 142.44 48.1203L144.489 54.8525C144.583 55.1597 144.823 55.4002 145.13 55.4937L151.863 57.5427C152.773 57.8199 152.773 59.109 151.863 59.3862L145.13 61.4352C144.823 61.5288 144.583 61.7692 144.489 62.0764L142.44 68.8086C142.163 69.7192 140.874 69.7192 140.597 68.8086L138.548 62.0764C138.454 61.7692 138.214 61.5288 137.906 61.4352L131.174 59.3862C130.264 59.109 130.264 57.8199 131.174 57.5427L137.906 55.4937C138.214 55.4002 138.454 55.1597 138.548 54.8525L140.597 48.1203Z%27 fill=%27%235DBAF4%27/%3E%3Cpath d=%27M14.3015 64.4794C14.5143 63.8817 15.3595 63.8817 15.5723 64.4794L18.8451 73.674C18.9114 73.8604 19.0563 74.0083 19.2413 74.0785L28.2083 77.4795C28.7886 77.6996 28.7886 78.5205 28.2083 78.7407L19.2413 82.1417C19.0563 82.2118 18.9114 82.3597 18.8451 82.5461L15.5723 91.7407C15.3595 92.3384 14.5143 92.3384 14.3015 91.7407L11.0287 82.5461C10.9624 82.3597 10.8175 82.2118 10.6325 82.1417L1.66556 78.7407C1.08521 78.5205 1.08521 77.6996 1.66556 77.4795L10.6325 74.0785C10.8175 74.0083 10.9624 73.8604 11.0287 73.674L14.3015 64.4794Z%27 fill=%27%2357D9CF%27/%3E%3Cpath d=%27M154.708 71.8702C154.836 71.3949 155.511 71.3949 155.639 71.8702L156.951 76.7458C156.996 76.9116 157.125 77.0411 157.291 77.0858L162.167 78.3985C162.642 78.5265 162.642 79.2009 162.167 79.3289L157.291 80.6416C157.125 80.6863 156.996 80.8158 156.951 80.9816L155.639 85.8572C155.511 86.3325 154.836 86.3325 154.708 85.8572L153.395 80.9816C153.351 80.8158 153.221 80.6863 153.055 80.6416L148.18 79.3289C147.705 79.2009 147.705 78.5265 148.18 78.3985L153.055 77.0858C153.221 77.0411 153.351 76.9116 153.395 76.7458L154.708 71.8702Z%27 fill=%27%23189DF0%27/%3E%3C/svg%3E")
+            center no-repeat;
+        }
+        .featuresImg {
+          width: 160px;
+          height: 110px;
+          margin: 0 auto;
+          background: greenyellow;
+          margin-bottom: 16px;
+        }
+        .feat_contents {
+          text-align: center;
+          line-height: 1.4;
+          letter-spacing: -0.5px;
+          div {
+            color: #1a1a1a;
+            &:first-child {
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//---------- <section2> ----------//
+.section2 {
+  width: 100%;
+  background: #fff;
+  padding: 48px 0;
+  margin-bottom: 12px;
+  .sectionInner2 {
+    max-width: 946px;
+    margin: 0 auto;
+    padding: 0 32px;
+    .section2Title {
+      @include medium;
+      font-size: 28px;
+      margin-bottom: 38px;
+    }
+    .pickItemBoxWrap {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 19px;
+      .pickItemBox {
+        position: relative;
+        width: 204.5px;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.26);
+        border: none;
+        border-radius: 4px;
+        overflow: hidden;
+        .pickslider {
+          height: 284px;
+          display: flex;
+          flex-direction: row;
+          &.amount1 {
+            width: 100%;
+            button {
+              color: #ccc;
+            }
+          }
+          &.amount2 {
+            width: 200%;
+          }
+          &.amount3 {
+            width: 300%;
+          }
+          &.amount4 {
+            width: 400%;
+          }
+          .pickItem {
+            width: 204.5px;
+            height: 100%;
+            .pickImg {
+              width: 100%;
+              height: 130px;
+              object-fit: cover;
+            }
+            .pickTextBox {
+              width: 100%;
+              height: 154px;
+              padding: 16px 12px;
+              .pickItemTitle {
+                display: block;
+                margin-bottom: 5px;
+              }
+            }
+          }
+        }
+        button {
+          cursor: pointer;
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          box-shadow: 0 0 2px rgba(0, 0, 0, 0.36);
+          border: none;
+          background: transparent;
+
+          &.pickPrev {
+            border-radius: 4px 2px 2px 4px;
+            right: 46px;
+            bottom: 16px;
+            background: url("./img/left.png") no-repeat center center / contain;
+            background-size: 8px;
+          }
+          &.pickNext {
+            border-radius: 2px 4px 4px 2px;
+            right: 12px;
+            bottom: 16px;
+            background: url("./img/right.png") no-repeat center center / contain;
+            background-size: 8px;
+          }
+          &.nomove {
+            filter: opacity(0.2);
+          }
+        }
+      }
+    }
+  }
+}
+
+//---------- <section3> ----------//
+.section3 {
+  width: 100%;
+  background: #fff;
+  .googlePlayImg {
+    width: 100%;
+    height: 400px;
+    background: url("https://cdn.banksalad.com/app/banksalad-web/landing-app-ad-banner-pc.png")
+      no-repeat 40% 0 / cover;
+    .section3Inner {
+      width: 882px;
+      margin: 0 auto;
+      padding-top: 80px;
+      .googleText {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.3;
+        margin-bottom: 5px;
+      }
+    }
+  }
+  .delivery {
+    position: relative;
+    width: 100%;
+    padding: 72px 20px;
+    text-align: center;
+    overflow: hidden;
+    span {
+      position: absolute;
+      opacity: 0.2;
+    }
+    .shinhan {
+      width: 156px;
+      height: 37px;
+      top: 74px;
+      left: calc(45% - 350px);
+      background: url("https://cdn.banksalad.com/cards/companies/shinhan_gray.png")
+        no-repeat center center / cover;
+    }
+    .samsung {
+      width: 118px;
+      height: 15px;
+      top: 159px;
+      left: calc(30% - 250px);
+      background: url("https://cdn.banksalad.com/cards/companies/samsung_gray.png")
+        no-repeat center center / cover;
+    }
+    .nh {
+      width: 111px;
+      height: 24px;
+      top: 64px;
+      left: calc(55% + 200px);
+      background: url("https://cdn.banksalad.com/cards/companies/nh_gray.png")
+        no-repeat center center / cover;
+    }
+    .hyundai {
+      width: 184px;
+      height: 37px;
+      top: 160px;
+      left: calc(65% + 150px);
+      background: url("https://cdn.banksalad.com/cards/companies/hyundai_gray.png")
+        no-repeat center center / cover;
+    }
+    .lotte {
+      width: 140px;
+      height: 14px;
+      top: 112px;
+      left: calc(70% + 200px);
+      background: url("https://cdn.banksalad.com/cards/companies/lotte_gray.png")
+        no-repeat center center / cover;
+    }
+  }
+  .inquiry {
+    padding: 32px 0;
+    text-align: center;
+    background: #f0f6f8;
+    color: #5c818a;
+    font-size: 14px;
+    font-family: "sans-serif";
+    a {
+      color: #5c818a;
+    }
+  }
+}
+
+.section3BtnBox {
+  display: flex;
+  .googlePlayBtn {
+    background: url("https://banksalad.com/cdn-cgi/image/h=80/https://cdn.banksalad.com/resources/images/store-logos/google-play.png")
+      no-repeat center center / cover;
+    width: 136px;
+    height: 40px;
+    display: block;
+    margin-right: 12px;
+  }
+  .appStoreBtn {
+    background: url("https://banksalad.com/cdn-cgi/image/h=80/https://cdn.banksalad.com/resources/images/store-logos/app-store.png")
+      no-repeat center center / cover;
+    width: 120px;
+    height: 40px;
+    display: block;
+  }
+}
+//---------- <footer> ----------//
+footer {
+  background: #fff;
+  .footerWrap {
+    max-width: 946px;
+    margin: 0 auto;
+    padding: 71px 0;
+    .footerPart1 {
+      display: flex;
+      margin-bottom: 92px;
+      .footerImgBox {
+        width: 473px;
+        .footerLogoImg {
+          width: 207px;
+          height: 34px;
+          display: block;
+          background: url(./img/banksalad_logo.png) no-repeat center center /
+            cover;
+          margin-bottom: 30px;
+        }
+        .footerAppstoreLink {
+          flex-direction: column-reverse;
+          gap: 6px;
+        }
+      }
+      .footerUlWrap {
+        ul {
+          width: 100%;
+          height: 100%;
+          li {
+            width: 100%;
+            height: 20px;
+            margin-bottom: 16px;
+            a {
+              font-size: 14px;
+              color: #555b66;
+            }
+          }
+        }
+        &:nth-of-type(2) {
+          padding-right: 120px;
+          .best {
+            color: #18cd8c;
+          }
+        }
+      }
+    }
+
+    .footerUlTitle {
+      @include bold;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+
+    .footerPart2 {
+      width: 100%;
+      padding: 24px 0;
+      .policies {
+        width: 100%;
+        margin-bottom: 25px;
+        display: flex;
+        justify-content: space-between;
+        a {
+          font-size: 12px;
+          color: #555b66;
+        }
+      }
+      .copyright {
+        display: flex;
+        flex-direction: column;
+        span {
+          font-size: 12px;
+          color: #888e99;
+          font-family: "sans-serif";
+          line-height: 1.5;
+          &:last-child {
+            padding-top: 25px;
+          }
+        }
+        a {
+          color: #888e99;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1026px) {
+  header {
+    display: none;
+  }
+  //--- Mobile Header ---//
+  header.mobileHeader {
+    &.mobileActive {
+      background-color: #fff;
+      position: fixed;
+    }
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    .openNavButton {
+      position: relative;
+      width: 22px;
+      height: 16px;
+      background: transparent;
+      border: none;
+      z-index: 9999;
+      cursor: pointer;
+      span {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #111;
+        &:nth-child(1) {
+          top: 0;
+        }
+        &:nth-child(2) {
+          top: 50%;
+        }
+        &:nth-child(3) {
+          top: 100%;
+        }
+        &.open {
+          &:nth-child(1) {
+            top: 50%;
+            transform: rotate(45deg);
+          }
+          &:nth-child(2) {
+            display: none;
+          }
+          &:nth-child(3) {
+            top: 50%;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+    .openNav {
+      display: none;
+      &.opened {
+        display: block;
+      }
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #fff;
+      .openNavContainer {
+        width: 100%;
+        padding-top: 60px;
+        li {
+          @include semibold;
+          position: relative;
+          padding: 18px 24px;
+          .fa-angle-down {
+            color: #111;
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            cursor: pointer;
+          }
+          .mb-lnbContainer {
+            display: none;
+            transition: all 0.4s;
+            &.visible {
+              display: block;
+            }
+            padding: 24px 0 12px;
+            border-bottom: 1px solid #ccc;
+            .mb-lnb {
+              .innerMenu {
+                @include semibold;
+                display: flex;
+                position: relative;
+                .best {
+                  margin-top: -2px;
+                  margin-left: 10px;
+                  background: #18cd8c;
+                  padding: 3px 6px;
+                  border-radius: 8px;
+                  font-size: 13px;
+                  color: #fff;
+                }
+                .best.new {
+                  background: #f53e50;
+                }
+                .fa-angle-right {
+                  position: absolute;
+                  right: 0;
+                  color: #333;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .slider {
+    margin-top: 60px;
+  }
+
+  .section3 {
+    .googlePlayImg {
+      .section3Inner {
+        padding: 60px 20px;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background: rgba(0, 0, 0, 0.3);
+        .googleText {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+
+  footer {
+    padding: 24px 20px;
+  }
+}
+
+@media screen and (max-width: 938px) {
+  .slider {
+    height: 400px;
+    .slideWrap {
+      .slide {
+        padding: 0 24px;
+        h2 {
+          font-size: clamp(28px, 5vw, 54px);
+        }
+        h3 {
+          font-size: 20px;
+        }
+      }
+      .s1 {
+        .slideInner {
+          position: relative;
+          display: block;
+          .slideInnerText {
+            width: 100%;
+            position: absolute;
+            z-index: 5;
+            .slide1BtnBox {
+              gap: 8px;
+              a {
+                padding: 8px 16px;
+                font-size: 14px;
+              }
+            }
+          }
+          .slideImg1 {
+            position: absolute;
+            right: -30%;
+            top: 53%;
+            transform: translateY(-50%);
+            margin: 0;
+            width: 80%;
+            height: auto;
+            object-fit: contain;
+          }
+        }
+      }
+      .s2 {
+        .slideInner {
+          position: relative;
+          display: block;
+          .slideInnerText {
+            width: 100%;
+            position: absolute;
+            z-index: 5;
+            .slide2BtnBox {
+              gap: 8px;
+              a {
+                padding: 8px 16px;
+                font-size: 14px;
+              }
+            }
+          }
+          .slideImg2 {
+            position: absolute;
+            right: -10%;
+            top: 53%;
+            transform: translateY(-50%);
+            margin: 0;
+            width: 80%;
+            height: auto;
+            object-fit: contain;
+          }
+        }
+      }
+      .s3 {
+        .slideInner {
+          padding: 40px 0;
+          position: relative;
+          display: block;
+          &::before {
+            content: "";
+            top: 0;
+            left: 40vw;
+          }
+          .slideInnerText {
+            padding-top: 60px;
+            width: 100%;
+            position: absolute;
+            z-index: 5;
+            .slide3BtnBox {
+              gap: 8px;
+              a {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+      .s4 {
+        .slideInner {
+          position: relative;
+          display: block;
+          .slideInnerText {
+            width: 100%;
+            position: absolute;
+            z-index: 5;
+            .slide4BtnBox {
+              gap: 8px;
+              a {
+                padding: 8px 16px;
+                font-size: 14px;
+              }
+            }
+          }
+          .slideImg4 {
+            position: absolute;
+            top: 53%;
+            transform: translateY(-50%);
+            margin: 0;
+            width: 80%;
+            height: auto;
+            object-fit: contain;
+          }
+        }
+      }
+      .s5 {
+        .slideInner {
+          padding: 80px 0 0;
+          position: relative;
+          display: block;
+          .slideInnerText {
+            width: 100%;
+            position: absolute;
+            z-index: 5;
+            .slide5Text {
+              font-size: clamp(28px, 5vw, 54px);
+            }
+            .slide5BtnBox {
+              gap: 8px;
+              a {
+                padding: 8px 16px;
+                font-size: 14px;
+              }
+            }
+          }
+          .slideImg5 {
+            position: absolute;
+            right: -10%;
+            top: 53%;
+            transform: translateY(-50%);
+            margin: 0;
+            width: 70%;
+            height: auto;
+            object-fit: contain;
+          }
+        }
+      }
+      .s6 {
+        .slideInner {
+          position: relative;
+          display: block;
+          .slideInnerText {
+            width: 100%;
+            position: absolute;
+            z-index: 5;
+            .slide6BtnBox {
+              gap: 8px;
+              a {
+                padding: 8px 16px;
+                font-size: 14px;
+              }
+            }
+          }
+          .slideImg6 {
+            position: absolute;
+            right: -30%;
+            top: 53%;
+            transform: translateY(-50%);
+            margin: 0;
+            width: 80%;
+            height: auto;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+
+  .section2 {
+    .sectionInner2 {
+      .pickItemBoxWrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  }
+
+  footer {
+    .footerWrap {
+      width: 100%;
+      .footerPart1 {
+        .footerImgBox {
+          width: 35%;
+          min-width: 224px;
+        }
+        .footerUlWrap {
+          &:nth-of-type(2) {
+            padding-right: 5%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section1 {
+    .sectionInner1 {
+      .featureTitle {
+        font-size: 16px;
+        strong {
+          font-size: 22px;
+        }
+      }
+      .featuresBox {
+        .features {
+          .featuresImg {
+            width: 80%;
+            min-width: 90px;
+          }
+          .feat_contents {
+            line-height: 1.3;
+            div {
+              font-size: 12px;
+              &:first-child {
+                margin-bottom: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .section3 {
+    .googlePlayImg {
+      background-image: url("https://cdn.banksalad.com/app/banksalad-web/landing-app-ad-banner-mobile.png")
+        no-repeat cover / cover;
+    }
+  }
+}
+
+@media screen and (max-width: 717px) {
+  .section2 {
+    .sectionInner2 {
+      .pickItemBoxWrap {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        .pickItemBox {
+          margin: 0 auto;
+          width: 44vw;
+          .pickslider {
+            height: 49vw;
+            .pickItem {
+              width: 100%;
+              .pickImg {
+                height: 25vw;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  footer {
+    .footerWrap {
+      .footerPart2 {
+        .policies {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          a {
+            display: block;
+            text-align: center;
+            padding-bottom: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .slider {
+    .slideWrap {
+      .slide {
+        padding: 0 16px;
+        h3 {
+          font-size: 16px;
+        }
+      }
+      .s1 {
+        .slideInner {
+          .slideInnerText {
+            top: 10%;
+            .slide1BtnBox {
+              flex-direction: column;
+              a {
+                &:first-child {
+                  width: 170px;
+                }
+                &:last-child {
+                  width: 190px;
+                }
+              }
+            }
+          }
+          .slideImg1 {
+            top: 70%;
+            right: -150px;
+            transform: translateY(-50%);
+            margin: 0;
+            width: 140%;
+            max-width: 600px;
+          }
+        }
+      }
+      .s2 {
+        .slideInner {
+          .slideInnerText {
+            top: 10%;
+            .slide2BtnBox {
+              flex-direction: column;
+            }
+          }
+          .slideImg2 {
+            top: 73%;
+            right: 0;
+            transform: translateY(-50%);
+            margin: 0;
+            width: 80%;
+          }
+        }
+      }
+      .s3 {
+        padding: 0;
+        .slideInner {
+          padding: 50px 16px;
+          position: relative;
+          display: block;
+          &::before {
+            content: "";
+            left: 0;
+            opacity: 0.7;
+            background: url(./img/banksalad_slider3.png) no-repeat center center;
+          }
+          .slideInnerText {
+            padding-top: 0;
+            width: 100%;
+            position: absolute;
+            z-index: 5;
+            .slide3BtnBox {
+              gap: 8px;
+              a {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+      .s4 {
+        .slideInner {
+          .slideInnerText {
+            top: 10%;
+            .slide4BtnBox {
+              flex-direction: column;
+            }
+            h3 {
+              font-size: 16px;
+            }
+          }
+          .slideImg4 {
+            top: 73%;
+            right: 0;
+            transform: translateY(-50%);
+            margin: 0;
+            width: 80%;
+          }
+        }
+      }
+      .s5 {
+        .slideInner {
+          padding: 40px 0 0;
+          .slideInnerText {
+            .slide5Text {
+              font-size: clamp(28px, 5vw, 54px);
+            }
+            h3 {
+              font-size: 16px;
+            }
+            .slide5BtnBox {
+              gap: 8px;
+              a {
+                padding: 8px 16px;
+                font-size: 14px;
+              }
+            }
+          }
+          .slideImg5 {
+            position: absolute;
+            right: -10%;
+            top: 70%;
+            transform: translateY(-50%);
+            margin: 0;
+            width: 80%;
+            height: auto;
+            object-fit: contain;
+          }
+        }
+      }
+      .s6 {
+        .slideInner {
+          .slideInnerText {
+            top: 10%;
+            .slide6BtnBox {
+              flex-direction: column;
+              a {
+                &:first-child {
+                  width: 200px;
+                }
+                &:last-child {
+                  width: 200px;
+                }
+              }
+            }
+          }
+          .slideImg6 {
+            top: 70%;
+            right: -180px;
+            transform: translateY(-50%);
+            margin: 0;
+            width: 140%;
+            max-width: 600px;
+          }
+        }
+      }
+    }
+  }
+
+  .section1 {
+    .sectionInner1 {
+      .featureTitle {
+        font-size: 14px;
+        strong {
+          font-size: 20px;
+        }
+      }
+      .featuresBox {
+        flex-direction: column;
+        gap: 20px;
+        .features {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+          .featuresImg {
+            width: 100px;
+            min-width: 90px;
+            min-height: 80%;
+            margin-bottom: 0;
+          }
+          .feat_contents {
+            width: 70%;
+            div {
+              text-align: left;
+              font-size: 12px;
+              &:first-child {
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .section2 {
+    .sectionInner2 {
+      padding: 0 16px;
+      .pickItemBoxWrap {
+        grid-gap: 8px;
+        .pickItemBox {
+          .pickslider {
+            height: 57vw;
+          }
+        }
+      }
+    }
+  }
+
+  .section3 {
+    .googlePlayImg {
+      .section3Inner {
+        padding: 60px 20px;
+        .googleText {
+          font-size: 14px;
+        }
+      }
+    }
+    .delivery {
+      color: #1a1a1a;
+      padding: 24px 6px;
+      font-size: 12px;
+      .shinhan,
+      .samsung,
+      .nh,
+      .hyundai,
+      .lotte {
+        display: none;
+      }
+    }
+    .inquiry {
+      padding: 12px 6px;
+      font-size: 11px;
+      line-height: 1.3;
+    }
+  }
+
+  footer {
+    .footerWrap {
+      width: 100%;
+      .footerPart1 {
+        margin-bottom: 46px;
+        display: block;
+        .footerImgBox {
+          width: 35%;
+          min-width: 224px;
+        }
+        .footerUlWrap {
+          margin: 20px 0;
+          ul {
+            li {
+              margin-bottom: 8px;
+              a {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+      .footerPart2 {
+        padding: 0;
+        .policies {
+          grid-template-columns: 1fr;
+          text-align-last: left;
+          a {
+            padding: 5px 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 371px) {
+  .section1 {
+    .sectionInner1 {
+      padding: 0;
+      .featureTitle {
+        font-size: 12px;
+        strong {
+          font-size: 16px;
+        }
+      }
+      .featuresBox {
+        .features {
+          gap: 10px;
+          .featuresImg {
+            width: 80px;
+            min-width: 80px;
+          }
+          .feat_contents {
+            width: 70%;
+            div {
+              font-size: 11px;
+              &:first-child {
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .section2 {
+    .sectionInner2 {
+      .pickItemBoxWrap {
+        .pickItemBox {
+          .pickslider {
+            .pickItem {
+              .pickTextBox {
+                padding: 4px 6px;
+                font-size: 14px;
+                .pickItemTitle {
+                  margin-bottom: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .section3 {
+    .googlePlayImg {
+      .section3Inner {
+        .googleText {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
